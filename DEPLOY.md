@@ -82,6 +82,21 @@ Result: `www` → apex, apex serves the site, canonicals match reality.
 
 ## Step 4 — Point DNS at Vercel (in Squarespace)
 
+> ✅ **Shortcut: Squarespace ships a built-in "Vercel" DNS preset.** (DNS Settings → **Add Preset**
+> → Vercel.) It auto-populates exactly the right records and is the easiest path:
+>
+> | Type | Name | Data |
+> |---|---|---|
+> | `A` | `@` | `216.198.79.1` |
+> | `CNAME` | `www` | `cname.vercel-dns.com` |
+>
+> The preset's `www` value is the **legacy** generic target rather than the project-unique one,
+> but Vercel's own dashboard states the old records "will continue to work" — verified resolving
+> to Vercel edge IPs. **Leave it as-is; no need to chase the project-unique CNAME.**
+>
+> ⚠️ **The preset does NOT remove the old `HTTPS` record.** It swaps the A/CNAME only. Delete the
+> `HTTPS` record on `@` manually (see below) or the domain keeps a live path back to Squarespace.
+
 Squarespace: **Settings → Domains → sesaloncollective.com → DNS Settings**
 
 1. **Delete the entire "Squarespace Defaults" preset** (trash icon on the preset card).
