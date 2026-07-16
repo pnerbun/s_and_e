@@ -395,6 +395,10 @@ body.menu-open { overflow: hidden; }
 
 /* Mobile action cluster (IG + hamburger), right side of the nav bar */
 .mobile-actions { display: none; align-items: center; gap: 16px; }
+/* Inline SVGs ride the text baseline, leaving descender space below that pushes
+   the icon visually high. Block-level removes it so icons center against the hamburger. */
+.nav-icon svg, .menu-social svg, .mobile-actions svg, .site-footer svg { display: block; }
+.mobile-actions .mobile-social { display: flex; align-items: center; }
 .hamburger { background: none; border: none; cursor: pointer; padding: 6px; display: flex; flex-direction: column; gap: 5px; }
 .hamburger span { width: 24px; height: 2px; background: currentColor; display: block; }
 
