@@ -177,9 +177,21 @@ records (it routes through Mailgun). Live **24–48 hrs after verification**.
 
 ### Caveats that matter here
 
-1. **❌ The destination cannot be iCloud, Yahoo, or AOL.** Squarespace's forwarding can't deliver
-   to free providers that enforce DKIM. **Gmail works.** Confirm what Sara actually uses before
-   promising this — if she's on iCloud, use a different route (see fallbacks).
+1. **Destination provider must not enforce DKIM/DMARC.** Squarespace's documented blocklist:
+   `aol.com` · `centurylink.net` · `icloud.com` · `mac.com` · `me.com` · `squarespace.com` ·
+   `squarespace-mail.com` · `yahoo.com`
+
+   | Destination | DMARC policy | Works? |
+   |---|---|---|
+   | **hotmail / outlook / live / msn** | `p=none` | ✅ **yes** — not on the blocklist |
+   | **gmail.com** | `p=none` | ✅ yes — the only one Squarespace explicitly recommends |
+   | yahoo.com | `p=reject` | ❌ blocked |
+   | icloud.com / me.com / mac.com | `p=quarantine` | ❌ blocked |
+
+   The blocklist tracks DMARC strictness exactly — Hotmail is fine because Microsoft publishes
+   `p=none`, same as Gmail. Squarespace still hedges: *"we recommend Gmail, but you may still
+   have issues receiving email."* Forwarded mail breaks the original SPF, and Microsoft's inbound
+   filtering is aggressive — **expect it in Junk at first; mark as safe / add to contacts.**
 2. **Replies won't come from `hello@`.** Outbound mail shows the *destination* address
    (her personal inbox) in the From field. Forwarding is receive-only. Sending *as*
    `hello@sesaloncollective.com` needs a real mailbox — and would require loosening the SPF
