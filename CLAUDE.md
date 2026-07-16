@@ -34,7 +34,7 @@ Built to mirror the `MakeupAndHairbyAndreina/` pattern: vanilla HTML/CSS/JS, no 
 ## Client facts
 
 - **Phone:** (262) 893-2887 — call/text to book or inquire about chairs (`tel:+12628932887`).
-- **Address:** 715 Genesee Street, Delafield, WI 53018 — ⚠️ **street name is a placeholder** (building number 715 is from the client photo; confirm the street with Sara).
+- **Address:** 715 Genesee Street, Delafield, WI 53018 — ✅ **confirmed by client** (2026-07-16). Geocodes to `43.061377, -88.404404`; that geo + `hasMap` is in the `HairSalon` schema on `index.html` and `contact.html`. Displayed as "Genesee Street" spelled out — if Sara's Google Business Profile ends up using "Genesee St", match it exactly for NAP consistency.
 - **Email:** hello@smithandelliot.com — ⚠️ placeholder, confirm.
 - **Domain/canonical:** `https://smithandelliot.com` — ⚠️ placeholder. Sara bought a domain via Squarespace; confirm the real domain and find/replace across all files + schema + sitemap + robots.
 - **Socials:** Instagram is live — `https://www.instagram.com/smithandelliot_saloncollective/` (wired into nav, all footers, and the `sameAs` arrays in the HairSalon + Organization schema). ⚠️ **Facebook handle still unknown** — the FB icons still point to generic `facebook.com`; update those `href`s and both schema `sameAs` arrays when it arrives. Banner-style social images to be created later.

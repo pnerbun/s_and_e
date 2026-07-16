@@ -11,7 +11,7 @@
 **Client name:** Sara Nickols
 **Business name:** Smith + Elliot — A Salon Collective
 **Business type / industry:** Hair salon (with booth/chair rental for independent stylists)
-**Location / service area:** Historic downtown Delafield, WI (715 Genesee Street — *street name is best-guess, confirm*), serving Lake Country / western Waukesha County (Delafield, Oconomowoc, Hartland, Pewaukee, Waukesha)
+**Location / service area:** Historic downtown Delafield, WI — 715 Genesee St, Delafield, WI 53018 (confirmed 2026-07-16) — serving Lake Country / western Waukesha County (Delafield, Oconomowoc, Hartland, Pewaukee, Waukesha)
 **Service radius:** ~15 miles / Lake Country area
 **Years in business:** New location opening Fall 2026; Sara has years of experience behind the chair in Milwaukee ([NEEDED] exact years)
 **Approximate jobs / clients served to date:** [NEEDED]

@@ -31,7 +31,7 @@ Vercel (static). ⚠️ No `Co-Authored-By` trailer on commits (Vercel Hobby blo
 
 ## Open items (confirm with Sara — see client-profile.md `[NEEDED]`)
 - Real domain (placeholder: smithandelliot.com), business email (placeholder: hello@smithandelliot.com).
-- Exact street address (building #715 known; street is best-guess "Genesee Street").
+- ~~Exact street address~~ ✅ **Confirmed 2026-07-16:** 715 Genesee St, Delafield, WI 53018 (geo in schema).
 - Hours of operation; confirm (262) 893-2887 as the public business line.
 - FB / IG handles (icons live, links are placeholders). Social banner images to be created.
 - Whether to publish chair-rental pricing/terms (currently "inquire only").
