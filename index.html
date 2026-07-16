@@ -111,6 +111,15 @@
   .stylist-cols { display: grid; grid-template-columns: 1fr; gap: 44px; align-items: center; }
   @media (min-width: 860px) { .stylist-cols { grid-template-columns: 1.1fr 0.9fr; gap: 70px; } }
 
+  /* ── Botanical motif: faint decorative flourish behind Our Story ── */
+  #about { position: relative; overflow: hidden; }
+  #about .section-wrap { position: relative; z-index: 1; }
+  .botanical-watermark {
+    position: absolute; right: -70px; bottom: -50px; width: 360px;
+    opacity: 0.13; pointer-events: none; user-select: none; z-index: 0;
+  }
+  @media (max-width: 900px) { .botanical-watermark { width: 250px; right: -55px; bottom: -35px; opacity: 0.11; } }
+
   /* ── Mobile-only banner hero (uses the ready-made brand graphic) ── */
   .hero-mobile-banner, .hero-mobile-cta { display: none; }
   @media (max-width: 640px) {
@@ -121,6 +130,8 @@
     .hero-mobile-banner img { width: 100%; height: auto; }
     .hero-mobile-cta { display: flex; gap: 12px; background: var(--black); padding: 20px 22px 26px; }
     .hero-mobile-cta .btn { flex: 1 1 0; text-align: center; padding-left: 10px; padding-right: 10px; }
+    /* Sign image is redundant on mobile (the banner already carries the wordmark) */
+    .about-teaser-img { display: none; }
     /* Force a solid nav over the light-topped banner (white text would vanish) */
     #site-nav.over-hero { background: var(--cream); box-shadow: 0 1px 0 var(--line); }
     #site-nav.over-hero .wordmark { color: var(--ink); }
@@ -172,7 +183,7 @@
 <header class="hero">
   <!-- Mobile-only banner hero (ready-made brand graphic; text lives in the image) -->
   <a class="hero-mobile-banner" href="#chairs" aria-label="Smith + Elliot, a salon collective — chair rentals now leasing in downtown Delafield">
-    <img src="photos/chair-rental-banner-delafield.jpg" alt="Smith + Elliot, A Salon Collective — chair rentals now leasing in historic downtown Delafield, WI. Call or text (262) 893-2887." width="1535" height="1024" fetchpriority="high">
+    <img src="photos/chair-rentals-now-leasing.jpg" alt="Smith + Elliot, A Salon Collective — chair rentals now leasing at our salon in historic downtown Delafield, WI." width="1535" height="1024" fetchpriority="high">
   </a>
   <div class="hero-inner fade-up">
     <span class="sup" style="color:var(--gold);">A Salon Collective · Delafield, WI</span>
@@ -190,8 +201,7 @@
 </header>
 <!-- Mobile-only hero CTA band (tappable actions beneath the banner) -->
 <div class="hero-mobile-cta">
-  <a href="contact.html" class="btn btn-gold">Book Now</a>
-  <a href="#chairs" class="btn btn-outline-white">Rent a Chair</a>
+  <a href="#chairs" class="btn btn-gold">Rent a Chair</a>
 </div>
 
 <!-- ═══════════════ MARQUEE ═══════════════ -->
@@ -204,9 +214,11 @@
 
 <!-- ═══════════════ ABOUT TEASER ═══════════════ -->
 <section id="about" class="section-pad" style="background:var(--cream);">
+  <!-- Botanical motif (decorative background flourish) -->
+  <img class="botanical-watermark" src="photos/botanical-motif-gold.png" alt="" aria-hidden="true" loading="lazy">
   <div class="section-wrap">
     <div class="split-wrap fade-up">
-      <div class="split-img" style="width:100%;">
+      <div class="split-img about-teaser-img" style="width:100%;">
         <img src="photos/smith-elliot-salon-sign.jpg" alt="Smith + Elliot salon sign in gold lettering on black — a salon collective in Delafield, WI" width="700" height="472" loading="lazy" style="width:100%; height:auto;">
       </div>
       <div class="split-text">
@@ -214,7 +226,7 @@
         <div class="gold-rule"></div>
         <h2 class="display" style="font-size:clamp(30px,4.4vw,46px); color:var(--black);">A New Home for Great Hair</h2>
         <p class="lead" style="margin-top:20px;">Smith + Elliot is a boutique hair salon and stylist collective opening this fall in the heart of downtown Delafield — a lovingly restored historic building where a small group of independent stylists share one belief: great hair happens when the people behind the chair love what they do and own how they do it.</p>
-        <p class="lead">It's a space designed to feel timeless: warm, unhurried, and genuinely welcoming — whether you're settling in for a fresh balayage or building your own business behind one of our chairs.</p>
+        <p class="lead">It's a space designed to feel timeless: warm, unhurried, and genuinely welcoming — whether you're settling in for a fresh style or building your own business behind one of our chairs.</p>
         <a href="about.html" class="btn btn-outline-dark" style="margin-top:12px;">More About Us</a>
       </div>
     </div>
@@ -253,7 +265,7 @@
         <p style="color:#d8d0c0; font-size:16px; line-height:1.85; max-width:52ch; margin-top:18px;">Smith + Elliot is a collective of independent stylists — a beautiful, professional space built so you can run your own book, set your own prices, and keep what you earn. We have <strong style="color:#fff;">chairs available now</strong> for licensed cosmetologists ready to be their own boss.</p>
         <ul class="feature-list" style="color:#eae3d4; margin-top:22px; max-width:52ch;">
           <li>Premier location in walkable, historic downtown Delafield</li>
-          <li>Professionally equipped, beautifully designed stations</li>
+          <li>Beautiful move-in ready stations</li>
           <li>A supportive community of creatives — your business, your way</li>
           <li>Flexible chair-rental terms (details on request)</li>
         </ul>
