@@ -66,11 +66,29 @@ Vercel then shows the **exact records to create**.
 
 Squarespace: **Settings → Domains → sesaloncollective.com → DNS Settings**
 
-1. **Delete** the four default Squarespace A records on `@`
-   (`198.185.159.144`, `198.185.159.145`, `198.49.23.144`, `198.49.23.145`).
+1. **Delete the entire "Squarespace Defaults" preset** (trash icon on the preset card).
+   That removes all of it in one action:
+   - 4 × `A` on `@` → `198.185.159.144/145`, `198.49.23.144/145`
+   - `CNAME` on `www` → `ext-sq.squarespace.com`
+   - `HTTPS` on `@` → **← the one everyone misses**
+
+   > ⚠️ **The `HTTPS` (SVCB) record must go too.** It pins the Squarespace IPs via `ipv4hint`:
+   > ```
+   > $ dig +short sesaloncollective.com HTTPS
+   > 198.185.159.145  198.185.159.144  198.49.23.145  198.49.23.144
+   > ```
+   > Delete the A records but leave this one and modern browsers can still use the hint to
+   > reach Squarespace — producing intermittent "works for me, not for her" behaviour that's
+   > painful to diagnose.
+
 2. **Add** an `A` record: host `@` → *the IP Vercel showed you*.
 3. **Add** a `CNAME` record: host `www` → *the unique target Vercel showed you*.
 4. **Leave the nameservers on `squarespacedns.com`.**
+
+> ❌ **Do not CNAME `www` to `s-and-e.vercel.app`.** Vercel doesn't support pointing a custom
+> domain at a `.vercel.app` alias — it breaks cert provisioning and routing. The `.vercel.app`
+> hostname is only the deployment alias. Use the project-unique target from the dashboard
+> (e.g. `d1d4fc829fe7bc7c.vercel-dns-017.com`).
 
 > **Why keep Squarespace's nameservers?** Delegating to Vercel's nameservers moves *all*
 > DNS to Vercel — you'd have to manually re-create every other record. If email
