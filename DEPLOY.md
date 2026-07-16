@@ -161,6 +161,52 @@ Squarespace: **Settings → Domains → sesaloncollective.com → DNS Settings**
   ```
 - In Vercel → Domains, set the **primary** domain and let the other redirect to it (apex ↔ www).
 
+## Step 5.5 — Email forwarding for hello@sesaloncollective.com
+
+The site publishes `hello@sesaloncollective.com` in all 7 footers, on the contact page, and in
+the `HairSalon` schema — but the domain has **no MX records**, so mail to it currently bounces.
+Fix before launch.
+
+Squarespace includes **free email forwarding** on Squarespace-managed domains (up to 100 aliases),
+so no third party is needed.
+
+**Setup:** Domains dashboard → `sesaloncollective.com` → **Email → Email Forwarding → Add rule**
+(re-auth with password/2FA) → **Forward from:** `hello` → **Forward to:** Sara's inbox → Save →
+**she must click the verification email**. Squarespace auto-adds the `MX`, `TXT` and `DMARC`
+records (it routes through Mailgun). Live **24–48 hrs after verification**.
+
+### Caveats that matter here
+
+1. **❌ The destination cannot be iCloud, Yahoo, or AOL.** Squarespace's forwarding can't deliver
+   to free providers that enforce DKIM. **Gmail works.** Confirm what Sara actually uses before
+   promising this — if she's on iCloud, use a different route (see fallbacks).
+2. **Replies won't come from `hello@`.** Outbound mail shows the *destination* address
+   (her personal inbox) in the From field. Forwarding is receive-only. Sending *as*
+   `hello@sesaloncollective.com` needs a real mailbox — and would require loosening the SPF
+   record below.
+3. **⚠️ Watch for SPF/DMARC collisions.** The domain already carries an **Email Security** preset:
+   ```
+   TXT @       v=spf1 -all                                   # "nobody may send as this domain"
+   TXT _dmarc  v=DMARC1; p=reject; sp=reject; adkim=s; aspf=s
+   TXT _domainkey  v=DKIM1; p=                               # empty key = revoked
+   ```
+   Squarespace's forwarding **also** adds TXT/DMARC records. Only **one** SPF TXT on `@` and
+   **one** DMARC TXT on `_dmarc` are valid — duplicates break mail auth. After enabling,
+   verify there's exactly one of each:
+   ```bash
+   dig +short sesaloncollective.com TXT @nsc1.squarespacedns.com    # expect ONE v=spf1 line
+   dig +short _dmarc.sesaloncollective.com TXT @nsc1.squarespacedns.com  # expect ONE v=DMARC1
+   dig +short sesaloncollective.com MX @nsc1.squarespacedns.com     # should now be populated
+   ```
+4. Can't forward to an address that is itself forwarding elsewhere. `*` works as a catch-all.
+
+### Fallbacks if forwarding won't work
+
+- **Zoho Mail** — free tier, real mailbox, can send *as* `hello@`. Needs MX + SPF/DKIM changes.
+- **Google Workspace** — ~$6/mo, real mailbox, cleanest for sending as the brand.
+- **Drop the address** — she's phone/text-first ("call or text to book"); removing the email from
+  the site is defensible for launch and better than publishing one that bounces.
+
 ## Step 6 — After it's live
 
 - **Google Search Console:** verify the domain, submit `https://sesaloncollective.com/sitemap.xml`.
