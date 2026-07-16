@@ -30,7 +30,8 @@ Marketing website + local SEO for **Smith + Elliot — A Salon Collective**, a h
 Vercel (static). ⚠️ No `Co-Authored-By` trailer on commits (Vercel Hobby blocks unknown co-authors). Point domain via DNS.
 
 ## Open items (confirm with Sara — see client-profile.md `[NEEDED]`)
-- Real domain (placeholder: smithandelliot.com), business email (placeholder: hello@smithandelliot.com).
+- ~~Real domain~~ ✅ **Confirmed 2026-07-16:** `sesaloncollective.com` (registered via Squarespace; keep registration there, point DNS at Vercel).
+- Business email — still a placeholder (`hello@sesaloncollective.com`); confirm the mailbox exists.
 - ~~Exact street address~~ ✅ **Confirmed 2026-07-16:** 715 Genesee St, Delafield, WI 53018 (geo in schema).
 - Hours of operation; confirm (262) 893-2887 as the public business line.
 - FB / IG handles (icons live, links are placeholders). Social banner images to be created.
