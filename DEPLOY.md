@@ -55,12 +55,30 @@ In Squarespace: **Settings → Domains → sesaloncollective.com**
 Project → **Settings → Domains → Add Domain** → `sesaloncollective.com`
 (Vercel will prompt to add `www.sesaloncollective.com` too — accept it.)
 
-Vercel then shows the **exact records to create**.
+Vercel then shows the **exact records to create**. As of 2026-07-16 the dashboard gives:
+
+| Type | Name | Value |
+|---|---|---|
+| `A` | `@` | `216.198.79.1` |
+| `CNAME` | `www` | *(read it off the `www.sesaloncollective.com` row → DNS Records tab — it's project-unique)* |
 
 > **Use the values Vercel shows you — do not copy them from a blog post.**
-> The apex **A** record IP can vary, and the `www` **CNAME target is unique per project**
-> (it looks like `d1d4fc829fe7bc7c.vercel-dns-017.com`, not the old generic
-> `cname.vercel-dns.com`). Read them off the dashboard.
+> Vercel's own dashboard notes: *"As part of a planned IP range expansion… the old records of
+> `cname.vercel-dns.com` and `76.76.21.21` will continue to work but we recommend you use the
+> new ones."* That's why the apex is now `216.198.79.1` and the `www` CNAME is project-unique.
+
+### ⚠️ Set the APEX as primary (not www)
+
+By default Vercel makes `www` primary and 308-redirects the apex to it. **This site is
+entirely non-www** — every canonical, `sitemap.xml`, `robots.txt`, and the JSON-LD `url`
+fields all declare `https://sesaloncollective.com/` (0 `www` references). Leaving Vercel's
+default means every canonical points at a URL that redirects → mixed indexing signals.
+
+Fix it on the Domains page **before** DNS propagates:
+1. **Edit** `sesaloncollective.com` → set **No Redirect** (serve Production).
+2. **Edit** `www.sesaloncollective.com` → **Redirect to** `sesaloncollective.com` (308).
+
+Result: `www` → apex, apex serves the site, canonicals match reality.
 
 ## Step 4 — Point DNS at Vercel (in Squarespace)
 
