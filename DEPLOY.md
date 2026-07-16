@@ -94,8 +94,29 @@ Result: `www` → apex, apex serves the site, canonicals match reality.
 > but Vercel's own dashboard states the old records "will continue to work" — verified resolving
 > to Vercel edge IPs. **Leave it as-is; no need to chase the project-unique CNAME.**
 >
-> ⚠️ **The preset does NOT remove the old `HTTPS` record.** It swaps the A/CNAME only. Delete the
-> `HTTPS` record on `@` manually (see below) or the domain keeps a live path back to Squarespace.
+> Deleting the "Squarespace Defaults" preset removes the 4 A records, the `www` CNAME **and the
+> `HTTPS` record** together. Nothing further to clean up.
+
+### 🔧 Debugging DNS on macOS — read this before trusting `dig`
+
+macOS ships **dig 9.10.6, which does not support the `HTTPS`/SVCB record type (type 65)**.
+`dig example.com HTTPS` does **not** error — it silently falls back to a **type A** query against
+your **local cache**, so you get stale A records dressed up as an "HTTPS record". This wasted a
+real debugging cycle here.
+
+```bash
+# ❌ Lies on macOS — silently becomes a cached type-A lookup
+dig +short sesaloncollective.com HTTPS
+
+# ✅ Correct: query type 65 explicitly, against the authoritative NS to skip cache
+dig +short sesaloncollective.com TYPE65 @nsc1.squarespacedns.com
+
+# ✅ Bypass a stale local resolver entirely when testing HTTP
+curl -sI --resolve sesaloncollective.com:443:216.198.79.1 https://sesaloncollective.com/
+```
+
+Old A records linger for the full TTL (**4 hrs** here). Seeing Squarespace after the cutover is
+almost always your own cache, not a misconfiguration — confirm against the authoritative NS.
 
 Squarespace: **Settings → Domains → sesaloncollective.com → DNS Settings**
 
