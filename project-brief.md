@@ -9,7 +9,7 @@ Marketing website + local SEO for **Smith + Elliot — A Salon Collective**, a h
 3. **Rank in Google** for "hair salon Delafield WI" and related Lake Country terms; support with a blog.
 
 ## Audiences
-- Lake Country clients wanting a warm, unhurried, higher-end salon.
+- Lake Country clients wanting a warm, higher-end salon.
 - Licensed stylists ready to go independent (booth rental).
 
 ## Scope (built)

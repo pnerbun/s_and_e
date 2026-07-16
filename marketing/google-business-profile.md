@@ -8,7 +8,7 @@ for "hair salon Delafield WI" the **GBP listing is what actually wins the map pa
 ```
 Smith + Elliot is a boutique hair salon and stylist collective in historic downtown Delafield, Wisconsin. Set in a restored 1800s cream city brick building on Genesee Street, we offer women's and men's haircuts, single-process color, foils, balayage, toners, blowouts, and deep conditioning treatments.
 
-We're built differently: our stylists are independent professionals who own their business and set their own menu, so the person in your chair is genuinely invested in your hair. Every service is unhurried and tailored to you, in a space designed to feel timeless and welcoming.
+We're built differently: our stylists are independent professionals who own their business and set their own menu, so the person in your chair is genuinely invested in your hair. Every service is tailored to you, in a space designed to feel timeless and welcoming.
 
 We serve Delafield, Oconomowoc, Hartland, Pewaukee, Waukesha and Lake Country. Chairs are also available for licensed cosmetologists building their own business.
 ```

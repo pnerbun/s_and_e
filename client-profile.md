@@ -28,7 +28,7 @@
 ## 2. Target Customer
 
 **Ideal customer description:**
-Two audiences. (1) **Clients:** Lake Country locals who want a warm, unhurried, higher-end salon experience close to home — people who value craft and a timeless, personal feel over a chain. (2) **Stylists:** experienced, licensed cosmetologists who want to go independent — run their own book, set their own prices, and be their own boss without opening their own storefront.
+Two audiences. (1) **Clients:** Lake Country locals who want a warm, higher-end salon experience close to home — people who value craft and a timeless, personal feel over a chain. (2) **Stylists:** experienced, licensed cosmetologists who want to go independent — run their own book, set their own prices, and be their own boss without opening their own storefront.
 
 **Primary customer demographics:**
 - Age range: adults 25–65 (clients); stylists ~22–50
@@ -36,7 +36,7 @@ Two audiences. (1) **Clients:** Lake Country locals who want a warm, unhurried, 
 - Life stage / context: established Lake Country residents; stylists ready to take the leap to booth rental
 
 **Why clients choose this business over competitors:**
-A genuinely warm, unhurried experience in a beautifully restored historic building; a collective of independent stylists who own their work and care about it; classic, timeless, welcoming — not a rushed chain.
+A genuinely warm, relaxed experience in a beautifully restored historic building; a collective of independent stylists who own their work and care about it; classic, timeless, welcoming — not a rushed chain.
 
 **What clients are nervous about before hiring — and how that changes after:**
 New-salon uncertainty (is it any good? who will I see?). After: reassured by the care, the quality of the space, and the personal attention. For stylists: nervous about the risk of going independent → reassured by turnkey, professional stations and a supportive community. [Expand with real client quotes once open.]
@@ -75,10 +75,14 @@ Busy Lake Country adults juggling work and family who rarely make time for thems
 **Signature phrases:**
 - "Your business, your way."
 - "A salon collective"
-- "Timeless," "unhurried," "cream city brick"
+- "Timeless," "cream city brick"
 - "Your chair" / "a chair to call your own"
 
 **Words to avoid:**
+- **"Unhurried"** — ⛔ client explicitly dislikes this word (2026-07-16). Do not use it in any
+  copy. The *idea* is still on-brand (see Opinion 2) — express it as "relaxed," "never rushed,"
+  or "tailored to you" instead. It was previously a signature phrase, which is how it spread
+  across the site; it has been removed everywhere.
 - "Cheap," "discount," "budget"
 - Over-hyped salon clichés ("glam squad," "slay," excessive exclamation)
 - Corporate jargon
@@ -99,7 +103,7 @@ Busy Lake Country adults juggling work and family who rarely make time for thems
 - Reader takeaway: Whether you're a guest or a stylist, you get someone who's invested and independent — not clock-punching.
 
 **Opinion 2:**
-- Belief: A great salon experience should feel unhurried.
+- Belief: A great salon experience should never feel rushed.
 - Proof / specific detail: Sara books with time and product built in, and prices reflect density/length at consultation rather than rushing clients through.
 - Reader takeaway: You won't feel like a number.
 
@@ -159,7 +163,7 @@ Busy Lake Country adults juggling work and family who rarely make time for thems
 ## 9. Competitor Context
 
 **Main competitor(s):** Other Lake Country / Delafield-area salons and commission chains; Milwaukee salons for stylists weighing the jump to independence.
-**How this client is different (specifically):** A booth-rental *collective* in a restored historic downtown building — stylists own their business; clients get invested, independent pros in an unhurried, timeless setting.
+**How this client is different (specifically):** A booth-rental *collective* in a restored historic downtown building — stylists own their business; clients get invested, independent pros in a relaxed, timeless setting.
 **What this client would say to a prospect who found someone cheaper:** [NEEDED] — likely a warm "you're paying for time, care, and a result that grows out beautifully," but confirm Sara's actual framing.
 
 ---
