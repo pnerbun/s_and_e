@@ -126,6 +126,16 @@
   }
   @media (max-width: 900px) { .botanical-watermark { width: 250px; right: -55px; bottom: -35px; opacity: 0.11; } }
 
+  /* ── Botanical motif on the forest "Now Leasing" section (mirrored, brighter on dark) ── */
+  #chairs { position: relative; overflow: hidden; }
+  #chairs .section-wrap { position: relative; z-index: 1; }
+  .botanical-chairs {
+    position: absolute; right: -80px; bottom: -70px; width: 430px;
+    opacity: 0.18; pointer-events: none; user-select: none; z-index: 0;
+    transform: scaleX(-1);
+  }
+  @media (max-width: 900px) { .botanical-chairs { width: 260px; right: -70px; bottom: -45px; opacity: 0.14; } }
+
   /* ── Mobile-only banner hero (uses the ready-made brand graphic) ── */
   .hero-mobile-banner, .hero-mobile-cta { display: none; }
   @media (max-width: 640px) {
@@ -269,6 +279,8 @@
 
 <!-- ═══════════════ STYLISTS WANTED / CHAIR RENTAL ═══════════════ -->
 <section id="chairs" class="section-pad" style="background:var(--forest); color:#eae3d4;">
+  <!-- Botanical motif (decorative background flourish) -->
+  <img class="botanical-chairs" src="photos/botanical-motif-gold.png" alt="" aria-hidden="true" loading="lazy">
   <div class="section-wrap">
     <div class="stylist-cols">
       <div class="fade-up">
@@ -287,7 +299,7 @@
           <a href="contact.html" class="btn btn-outline-white">Get in Touch</a>
         </div>
       </div>
-      <div class="fade-up" style="border:1px solid rgba(184,148,90,0.4); padding:40px 34px; text-align:center; background:rgba(0,0,0,0.12);">
+      <div class="fade-up" style="border:1px solid rgba(184,148,90,0.4); padding:40px 34px; text-align:center; background:rgba(20,30,24,0.55);">
         <span class="sup" style="color:var(--gold);">Chairs Available</span>
         <div style="font-family:'Cormorant Garamond',serif; font-size:88px; line-height:1; color:#fff; margin:14px 0;">4</div>
         <p style="color:#d8d0c0; font-size:14px; line-height:1.7;">of 5 stations open to independent stylists. Each renter runs their own business and sets their own menu.</p>
