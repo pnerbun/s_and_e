@@ -395,6 +395,28 @@ body.menu-open { overflow: hidden; }
 .footer-heading { font-family: 'Jost', sans-serif; font-size: 10px; text-transform: uppercase; letter-spacing: 2.5px; color: var(--gold); margin-bottom: 18px; }
 .footer-link { display: block; font-size: 14px; padding: 5px 0; }
 
+/* ═══ BOTANICAL MOTIF (decorative background flourish) ═══
+   Usage: add .has-botanical to the <section>, then drop in
+   <img class="botanical left|right on-light|on-dark" ... alt="" aria-hidden="true">
+   Sides alternate down the page; .left is mirrored so the two sides aren't identical. */
+.has-botanical { position: relative; overflow: hidden; }
+.has-botanical > .section-wrap { position: relative; z-index: 1; }
+.botanical {
+  position: absolute; bottom: -55px; width: 390px;
+  pointer-events: none; user-select: none; z-index: 0;
+}
+.botanical.right { right: -70px; }
+.botanical.left  { left: -70px; transform: scaleX(-1); }
+/* Gold needs opposite treatment per background: darker on cream, lifted on dark */
+.botanical.on-light { opacity: 0.35; filter: brightness(0.68) saturate(1.2); }
+.botanical.on-dark  { opacity: 0.35; filter: brightness(1.15); }
+@media (max-width: 900px) {
+  .botanical { width: 265px; bottom: -38px; }
+  .botanical.right { right: -60px; }
+  .botanical.left  { left: -60px; }
+  .botanical.on-light, .botanical.on-dark { opacity: 0.30; }
+}
+
 /* ═══ BLOG ARTICLE ═══ */
 .article { max-width: 760px; margin: 0 auto; }
 .article > p { font-size: 17px; line-height: 1.85; color: #3f382e; margin: 0 0 1.3em; }
