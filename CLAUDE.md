@@ -37,7 +37,7 @@ Built to mirror the `MakeupAndHairbyAndreina/` pattern: vanilla HTML/CSS/JS, no 
 - **Address:** 715 Genesee Street, Delafield, WI 53018 — ⚠️ **street name is a placeholder** (building number 715 is from the client photo; confirm the street with Sara).
 - **Email:** hello@smithandelliot.com — ⚠️ placeholder, confirm.
 - **Domain/canonical:** `https://smithandelliot.com` — ⚠️ placeholder. Sara bought a domain via Squarespace; confirm the real domain and find/replace across all files + schema + sitemap + robots.
-- **Socials:** FB + IG exist but handles unknown — icons currently point to generic `facebook.com` / `instagram.com`. ⚠️ Update `href`s and schema `sameAs` when handles arrive. Banner-style social images to be created later.
+- **Socials:** Instagram is live — `https://www.instagram.com/smithandelliot_saloncollective/` (wired into nav, all footers, and the `sameAs` arrays in the HairSalon + Organization schema). ⚠️ **Facebook handle still unknown** — the FB icons still point to generic `facebook.com`; update those `href`s and both schema `sameAs` arrays when it arrives. Banner-style social images to be created later.
 - **Hours:** "By appointment · Opening Fall 2026" placeholder — confirm real hours.
 
 Sara's own service pricing (other stylists set their own): Women's Cut $55 · Men's Cut $45 · Single-Process Color from $80 · Foils from $50 · Balayage from $135 · Toner from $30 · Blowout from $40 · Deep Conditioning from $20.
