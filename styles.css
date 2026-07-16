@@ -327,11 +327,13 @@ p { margin: 0 0 1em; }
 /* ═══ RESPONSIVE NAV ═══ */
 @media (max-width: 860px) {
   .desktop-nav { display: none !important; }
-  .mobile-trigger { display: flex !important; }
+  /* !important: the base `.mobile-actions{display:none}` rule is declared later in this file */
+  .mobile-actions { display: flex !important; }
+  .mobile-trigger { display: flex; }
 }
 @media (min-width: 861px) {
-  .mobile-trigger { display: none !important; }
-  #mobile-menu { display: none !important; }
+  .mobile-actions { display: none !important; }
+  #mobile-menu, #mobile-menu.open { display: none !important; }
 }
 
 /* ═══ SCREEN-READER ONLY ═══ */
@@ -376,15 +378,23 @@ p { margin: 0 0 1em; }
 .nav-spacer { height: 74px; }
 @media (max-width: 640px) { #site-nav { padding: 16px 22px; } }
 
-/* Mobile menu panel */
+/* Mobile menu panel — sits ABOVE the nav (z-index 200) so its close button is reachable */
 #mobile-menu {
-  position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 199;
+  position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 250;
   background: var(--cream);
   display: none;
   flex-direction: column; align-items: center; justify-content: center; gap: 26px;
   padding: 40px;
 }
+#mobile-menu.open { display: flex; }
+body.menu-open { overflow: hidden; }
 #mobile-menu a.nav-link { font-size: 15px; letter-spacing: 0.2em; }
+.menu-social { display: flex; gap: 22px; margin-top: 14px; color: var(--ink); }
+.menu-social a { color: var(--ink); opacity: 0.8; transition: opacity 0.2s, color 0.2s; }
+.menu-social a:hover { opacity: 1; color: var(--gold-deep); }
+
+/* Mobile action cluster (IG + hamburger), right side of the nav bar */
+.mobile-actions { display: none; align-items: center; gap: 16px; }
 .hamburger { background: none; border: none; cursor: pointer; padding: 6px; display: flex; flex-direction: column; gap: 5px; }
 .hamburger span { width: 24px; height: 2px; background: currentColor; display: block; }
 
