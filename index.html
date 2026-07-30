@@ -26,10 +26,9 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231A1714'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='20' fill='%23B8945A' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
 
 <!-- ═══ FONTS ═══ -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 
+<link rel="preload" href="fonts/cormorant-garamond-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/jost-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="styles.css">
 
 <!-- ═══ SCHEMA: HairSalon (LocalBusiness) ═══ -->
@@ -102,7 +101,7 @@
   .hero {
     position: relative; min-height: 100vh; display: flex; align-items: center;
     background: linear-gradient(102deg, rgba(20,17,14,0.90) 0%, rgba(20,17,14,0.66) 46%, rgba(20,17,14,0.30) 100%),
-                url('photos/salon-building-delafield.jpg') center 28%/cover no-repeat;
+                url('photos/salon-building-delafield.webp') center 28%/cover no-repeat;
   }
   .hero-inner { max-width: 1180px; margin: 0 auto; padding: 120px 40px; width: 100%; }
   .hero h1 { color: #fff; font-size: clamp(40px, 7vw, 82px); max-width: 15ch; }
@@ -189,7 +188,10 @@
 <header class="hero">
   <!-- Mobile-only banner hero (ready-made brand graphic; text lives in the image) -->
   <a class="hero-mobile-banner" href="#chairs" aria-label="Smith + Elliot, a salon collective — chair rentals now leasing in downtown Delafield">
-    <img src="photos/chair-rentals-now-leasing.jpg" alt="Smith + Elliot, A Salon Collective — chair rentals now leasing at our salon in historic downtown Delafield, WI." width="1535" height="1024" fetchpriority="high">
+    <picture>
+      <source srcset="photos/chair-rentals-now-leasing.webp" type="image/webp">
+      <img src="photos/chair-rentals-now-leasing.jpg" alt="Smith + Elliot, A Salon Collective — chair rentals now leasing at our salon in historic downtown Delafield, WI." width="1535" height="1024" fetchpriority="high">
+    </picture>
   </a>
   <div class="hero-inner fade-up">
     <span class="sup" style="color:var(--gold);">A Salon Collective · Delafield, WI</span>
@@ -213,11 +215,11 @@
 <!-- ═══════════════ ABOUT TEASER ═══════════════ -->
 <section id="about" class="section-pad has-botanical" style="background:var(--cream);">
   <!-- Botanical motif (decorative background flourish) -->
-  <img class="botanical right on-light" src="photos/botanical-motif-gold.png" alt="" aria-hidden="true" loading="lazy">
+  <img class="botanical right on-light" src="photos/botanical-motif-gold.webp" alt="" aria-hidden="true" loading="lazy">
   <div class="section-wrap">
     <div class="split-wrap fade-up">
       <div class="split-img about-teaser-img" style="width:100%;">
-        <img src="photos/smith-elliot-salon-sign.jpg" alt="Smith + Elliot salon sign in gold lettering on black — a salon collective in Delafield, WI" width="700" height="472" loading="lazy" style="width:100%; height:auto;">
+        <img src="photos/smith-elliot-salon-sign.webp" alt="Smith + Elliot salon sign in gold lettering on black — a salon collective in Delafield, WI" width="700" height="472" loading="lazy" style="width:100%; height:auto;">
       </div>
       <div class="split-text">
         <span class="sup">Our Story</span>
@@ -234,7 +236,7 @@
 <!-- ═══════════════ SERVICES OVERVIEW ═══════════════ -->
 <section class="section-pad has-botanical" style="background:var(--cream-alt);">
   <!-- Botanical motif (decorative background flourish) -->
-  <img class="botanical left on-light" src="photos/botanical-motif-gold.png" alt="" aria-hidden="true" loading="lazy">
+  <img class="botanical left on-light" src="photos/botanical-motif-gold.webp" alt="" aria-hidden="true" loading="lazy">
   <div class="section-wrap">
     <div style="text-align:center; max-width:640px; margin:0 auto 54px;" class="fade-up">
       <span class="sup">What We Do</span>
@@ -257,7 +259,7 @@
 <!-- ═══════════════ STYLISTS WANTED / CHAIR RENTAL ═══════════════ -->
 <section id="chairs" class="section-pad has-botanical" style="background:var(--forest); color:#eae3d4;">
   <!-- Botanical motif (decorative background flourish) -->
-  <img class="botanical right on-dark" src="photos/botanical-motif-gold.png" alt="" aria-hidden="true" loading="lazy">
+  <img class="botanical right on-dark" src="photos/botanical-motif-gold.webp" alt="" aria-hidden="true" loading="lazy">
   <div class="section-wrap">
     <div class="stylist-cols">
       <div class="fade-up">
@@ -291,11 +293,11 @@
 <!-- ═══════════════ THE SPACE ═══════════════ -->
 <section class="section-pad has-botanical" style="background:var(--cream);">
   <!-- Botanical motif (decorative background flourish) -->
-  <img class="botanical left on-light" src="photos/botanical-motif-gold.png" alt="" aria-hidden="true" loading="lazy">
+  <img class="botanical left on-light" src="photos/botanical-motif-gold.webp" alt="" aria-hidden="true" loading="lazy">
   <div class="section-wrap">
     <div class="split-wrap reverse fade-up">
       <div class="split-img" style="width:100%;">
-        <img src="photos/salon-building-delafield.jpg" alt="The historic 1800s cream-city-brick building housing Smith + Elliot salon at 715 in downtown Delafield, WI" width="600" height="804" loading="lazy" style="width:100%; height:auto; border:6px solid #fff; box-shadow:0 20px 50px rgba(26,23,20,0.14);">
+        <img src="photos/salon-building-delafield.webp" alt="The historic 1800s cream-city-brick building housing Smith + Elliot salon at 715 in downtown Delafield, WI" width="600" height="804" loading="lazy" style="width:100%; height:auto; border:6px solid #fff; box-shadow:0 20px 50px rgba(26,23,20,0.14);">
       </div>
       <div class="split-text">
         <span class="sup">The Space</span>
@@ -312,7 +314,7 @@
 <!-- ═══════════════ CONTACT CTA ═══════════════ -->
 <section class="section-pad has-botanical" style="background:var(--black); color:#e7e0d3; text-align:center;">
   <!-- Botanical motif (decorative background flourish) -->
-  <img class="botanical right on-dark" src="photos/botanical-motif-gold.png" alt="" aria-hidden="true" loading="lazy">
+  <img class="botanical right on-dark" src="photos/botanical-motif-gold.webp" alt="" aria-hidden="true" loading="lazy">
   <div class="section-wrap fade-up" style="max-width:720px;">
     <span class="sup" style="color:var(--gold);">Visit Us</span>
     <div class="diamond-rule center"><span class="dot"></span></div>
