@@ -2,29 +2,31 @@
 
 Run with `/perf-review` (monorepo root command). Audit the **deployed** URL, not localhost.
 
-## Baseline — 2026-07-16 (Lighthouse 12, `s-and-e.vercel.app`)
+## Current — 2026-07-16 (after fixes 1–3 below)
 
 | Category | Mobile | Desktop |
 |---|---|---|
-| **Performance** | 🟡 82 | 🟢 94 |
+| **Performance** | 🟢 **98** | 🟢 **100** |
 | Accessibility | 🟢 95 | 🟢 100 |
 | Best Practices | 🟢 100 | 🟢 100 |
 | SEO | 🟢 100 | 🟢 100 |
 
-**Core Web Vitals**
-
 | Metric | Mobile | Desktop | Target |
 |---|---|---|---|
-| LCP | 🟡 3.5s | 🟢 1.4s | ≤2.5s |
+| LCP | 🟢 **2.3s** | 🟢 **0.5s** | ≤2.5s |
 | CLS | 🟢 0 | 🟢 0 | ≤0.1 |
 | TBT | 🟢 0ms | 🟢 0ms | ≤200ms |
 
-Desktop is excellent. Mobile is good but LCP misses the "good" bar — driven by two things below.
-CLS 0 and TBT 0 are as good as it gets (the explicit image dimensions and the ~40 lines of JS pay off).
+Page weight: mobile **1,122 → 502 KiB**, desktop **1,315 → 543 KiB** (~55% lighter).
+All three fixes below are **done** (commit `438e2e9`).
 
-## Fixes, by measured impact
+### Original baseline (before fixes) — for reference
+Mobile perf 82 / LCP 3.5s; desktop 94 / LCP 1.4s. The two drivers were render-blocking
+Google Fonts (891ms) and oversized JPEGs.
 
-1. **[medium] Render-blocking Google Fonts** — 891ms on mobile, the single blocking request.
+## Fixes — DONE 2026-07-16
+
+1. ✅ **[done] Self-hosted the fonts** (was render-blocking Google Fonts) — 891ms on mobile, the single blocking request.
    `<link href="fonts.googleapis.com/css2?...">` blocks first paint.
    ⚠️ The usual `media="print" onload="this.media='all'"` async trick uses an inline handler,
    which our CSP (`script-src 'self'`) **blocks** — don't reach for it.
@@ -33,11 +35,11 @@ CLS 0 and TBT 0 are as good as it gets (the explicit image dimensions and the ~4
    in `styles.css`. Removes the third-party render-block entirely and lets us drop `fonts.gstatic.com`
    from the CSP. Biggest single mobile win.
 
-2. **[quick] Mobile hero banner is oversized** — LCP element = `chair-rentals-now-leasing.jpg`.
+2. ✅ **[done] Sized + WebP mobile hero banner** — LCP element = `chair-rentals-now-leasing.jpg`.
    Served at 1535px wide but displayed ~390px. Save ~143KB by sizing + ~84KB as WebP.
    Ship an ~800px WebP variant (already has `fetchpriority="high"`, good).
 
-3. **[quick] Convert the JPEG/PNG photos to WebP** — `salon-building-delafield.jpg` (−341KB),
+3. ✅ **[done] Converted photos to WebP** — `salon-building-delafield.jpg` (−341KB),
    `chair-rentals-now-leasing.jpg` (−84KB), `botanical-motif-gold.png` (−78KB). Use `<picture>`
    with WebP + JPEG fallback, or just swap to WebP (universally supported now).
 
