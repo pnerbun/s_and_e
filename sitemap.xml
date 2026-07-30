@@ -31,4 +31,9 @@
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
+  <!-- Service-area pages -->
+  <url><loc>https://sesaloncollective.com/areas/hair-salon-oconomowoc-wi.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://sesaloncollective.com/areas/hair-salon-hartland-wi.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://sesaloncollective.com/areas/hair-salon-pewaukee-wi.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://sesaloncollective.com/areas/hair-salon-waukesha-wi.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
 </urlset>
