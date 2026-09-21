@@ -500,3 +500,23 @@ body.menu-open { overflow: hidden; }
 .detail-row .label { font-size: 10px; text-transform: uppercase; letter-spacing: 2px; color: var(--muted); margin-bottom: 3px; }
 .detail-row a, .detail-row span { font-size: 16px; color: var(--ink); text-decoration: none; }
 .detail-row a:hover { color: var(--gold-deep); }
+
+/* ── Davines product-line callout (Sara's line — Services + homepage strip) ── */
+.davines-logo { display: block; height: 34px; width: auto; margin: 0 auto; }
+.davines-card .davines-logo { height: 40px; }
+.davines-strip .davines-logo { margin: 0; }
+.davines-card {
+  background: #fff; border: 1px solid var(--line); text-align: center;
+  padding: 44px 32px; margin-top: 64px;
+}
+.davines-card .sup { display: block; margin-top: 22px; }
+.davines-card h2 { font-size: clamp(26px, 3.4vw, 36px); color: var(--black); margin-top: 6px; }
+.davines-card p { max-width: 54ch; margin: 14px auto 0; }
+.davines-strip { background: var(--cream-alt); padding: 44px 0; text-align: center; }
+.davines-strip .section-wrap { display: flex; align-items: center; justify-content: center; gap: 18px 36px; flex-wrap: wrap; }
+.davines-strip p { margin: 0; font-size: 15px; color: var(--ink); }
+.davines-strip a { color: var(--gold-deep); font-size: 11px; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; border-bottom: 1px solid currentColor; padding-bottom: 2px; }
+@media (max-width: 640px) {
+  .davines-card { padding: 36px 22px; }
+  .davines-strip .section-wrap { flex-direction: column; }
+}
