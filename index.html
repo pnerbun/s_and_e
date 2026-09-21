@@ -128,7 +128,7 @@
     .hero-mobile-banner { display: block; line-height: 0; }
     .hero-mobile-banner img { width: 100%; height: auto; }
     .hero-mobile-cta { display: flex; gap: 12px; background: var(--black); padding: 20px 22px 26px; }
-    .hero-mobile-cta .btn { flex: 1 1 0; text-align: center; padding-left: 10px; padding-right: 10px; }
+    .hero-mobile-cta .btn { flex: 1 1 0; display: flex; align-items: center; justify-content: center; text-align: center; line-height: 1.5; padding-left: 10px; padding-right: 10px; }
     /* Sign image is redundant on mobile (the banner already carries the wordmark) */
     .about-teaser-img { display: none; }
     /* Force a solid nav over the light-topped banner (white text would vanish) */
@@ -209,6 +209,7 @@
 <!-- Mobile-only hero CTA band (tappable actions beneath the banner) -->
 <div class="hero-mobile-cta">
   <a href="#chairs" class="btn btn-gold">Rent a Chair</a>
+  <a href="tel:+12628932887" class="btn btn-outline-white">Schedule an Appointment</a>
 </div>
 
 <!-- ═══════════════ ABOUT TEASER ═══════════════ -->
